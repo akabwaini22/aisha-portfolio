@@ -395,3 +395,25 @@ td a {
         padding: 10px;
     }
 }
+
+
+/* Elegant Lavender Footer */
+.footer {
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 60px;
+    background-color: #ffffff;
+    border-top: 2px solid #e8d8f5;
+    border-radius: 25px 25px 0 0;
+}
+
+.footer h3 {
+    color: #8054aa;
+    margin-bottom: 12px;
+}
+
+.footer p {
+    color: #927da8;
+    font-size: 14px;
+    line-height: 1.8;
+}
