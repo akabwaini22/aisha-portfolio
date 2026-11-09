@@ -37,18 +37,22 @@ if (contactForm) {
 });
 }
 
+
 /* Elegant Scroll Reveal */
 
 document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
 
-    if (!("IntersectionObserver" in window)) {
-        return;
-    }
-
     sections.forEach(function (section) {
         section.classList.add("reveal");
     });
+
+    if (!("IntersectionObserver" in window)) {
+        sections.forEach(function (section) {
+            section.classList.add("active");
+        });
+        return;
+    }
 
     const observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
