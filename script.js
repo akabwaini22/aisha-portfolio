@@ -1,5 +1,9 @@
 
-document.getElementById("contactForm").addEventListener("submit", function(event) {
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function(event) {
 
     // Prevent the page from refreshing
     event.preventDefault();
@@ -31,3 +35,34 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     document.getElementById("contactForm").reset();
 
 });
+}
+
+/* Elegant Scroll Reveal */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+
+    if (!("IntersectionObserver" in window)) {
+        return;
+    }
+
+    sections.forEach(function (section) {
+        section.classList.add("reveal");
+    });
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    sections.forEach(function (section) {
+        observer.observe(section);
+    });
+});
+
